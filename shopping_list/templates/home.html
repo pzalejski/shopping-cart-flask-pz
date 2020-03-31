@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset>
+                {{ form.item.label }}
+                {{ form.item(class='form-control',placeholder='Enter an Item') }}
+        </fieldset>
+        <fieldset>
+                {{ form.quantity.label }}
+                {{ form.quantity(class='form-control',placeholder='Enter a Quantity') }}
+        </fieldset>
+        {{ form.submit(class='btn btn-secondary') }}
+    </form>
+
+{% endblock content %}

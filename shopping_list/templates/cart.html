@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if cart %}
+
+    {% for x in cart %}
+        <ul>
+            <li>
+                Item: {{ x.item }}
+            </li>
+            <li>
+                Quantity: {{ x.quantity }}
+            </li>
+        </ul>
+        <a href="{{ url_for('update_cart', cart_id = x.id ) }}"><button class="btn btn-secondary">Update</button></a>
+        <a href="{{ url_for('delete_from_cart', cart_id = x.id ) }}"><button class="btn btn-danger">Delete</button></a>
+    {% else %}
+        <h2>Nothing in your cart yet...</h2>
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

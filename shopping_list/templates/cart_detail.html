@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if cart %}
+    <ul>
+            <li>
+                Item: {{ cart.item }}
+            </li>
+            <li>
+                Quantity: {{ cart.quantity }}
+            </li>
+
+        </ul>
+        <a href="{{ url_for('delete_from_cart', cart_id = cart.id ) }}"><button class="btn btn-danger">Delete</button></a>
+    {% else %}
+        <h2>Nothing to see here</h2>
+
+    {% endif %}
+
+{% endblock content %}
